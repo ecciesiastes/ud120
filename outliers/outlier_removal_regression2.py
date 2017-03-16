@@ -8,9 +8,8 @@ import pickle
 from outlier_cleaner import outlierCleaner
 
 
-##部署一个线性回归，其中的净值是目标，而用来进行预测的特征是人的年龄（记得在训练数据上进行训练！）。
-##数据点主体的正确斜率是 6.25（我们之所以知道，是因为我们使用该值来生成数据）；你的回归的斜率是多少？
 
+##当使用回归在测试数据上进行预测时，你获得的分数是多少？
 
 
 ### load up some practice data with outliers in it
@@ -38,6 +37,9 @@ from sklearn.linear_model import LinearRegression
 
 reg = LinearRegression()
 reg.fit(ages_train, net_worths_train)
+
+print(reg.score(ages_test, net_worths_test))
+
 
 try:
     plt.plot(ages, reg.predict(ages), color="blue")
@@ -77,7 +79,3 @@ if len(cleaned_data) > 0:
 
 else:
     print("outlierCleaner() is returning an empty list, no refitting to be done")
-
-
-
-print(reg.coef_)
