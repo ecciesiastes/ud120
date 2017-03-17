@@ -43,20 +43,20 @@ for data in my_dataset:
         skilling = my_dataset[data]['total_payments']
     if str(data).find('Fastow'.upper()) >= 0:
         fastow = my_dataset[data]['total_payments']
-    if my_dataset[data]["poi"]==True:
-        num_poi_n +=1
+    if my_dataset[data]["poi"] == True:
+        num_poi_n += 1
     if my_dataset[data]["salary"] != 'NaN':
-        num_salary +=1
+        num_salary += 1
     if my_dataset[data]["email_address"] != 'NaN':
-        num_email +=1
+        num_email += 1
     if my_dataset[data]["total_payments"] == 'NaN':
         num_nan_payments += 1
-    if (my_dataset[data]["total_payments"] == 'NaN') & my_dataset[data]["poi"]==True:
+    if (my_dataset[data]["total_payments"] == 'NaN') & my_dataset[data]["poi"] == True:
         num_nan_poi_payments += 1
 
-print('lay has %s.'%(lay))
-print('skilling has %s.'%(skilling))
-print('fastow has %s.'%(fastow))
+print('lay has %s.' % (lay))
+print('skilling has %s.' % (skilling))
+print('fastow has %s.' % (fastow))
 
 print(max(lay, skilling, fastow))
 print(num_poi_n)
@@ -64,10 +64,8 @@ print(num_poi_n)
 print(num_salary)
 print(num_email)
 
-
-print('num_nan_payments has %s.'%(num_nan_payments))
-print('num_total has %s.'%(num_total))
+print('num_nan_payments has %s.' % (num_nan_payments))
+print('num_total has %s.' % (num_total))
 print(num_nan_payments / num_total)
-
 
 print(num_nan_poi_payments / num_poi_n)
