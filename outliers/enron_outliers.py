@@ -18,8 +18,8 @@ for kk in data_dict:
         print(kk)
 
 
-
-data_dict['TOTAL']['bonus'] = 0
+data_dict.pop("TOTAL", 0)
+#data_dict['TOTAL']['bonus'] = 0
 
 
 
