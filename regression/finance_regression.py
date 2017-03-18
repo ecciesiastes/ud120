@@ -24,7 +24,7 @@ dictionary = pickle.load(open("../final_project/final_project_dataset_modified.p
 ### list will be the "target" feature
 features_list = ["bonus", "salary"]
 data = featureFormat(dictionary, features_list,
-                     remove_any_zeroes=True, sort_keys = '../tools/python2_lesson06_keys.pkl')
+                     remove_any_zeroes=True, sort_keys='../tools/python2_lesson06_keys.pkl')
 target, features = targetFeatureSplit(data)
 
 ### training-testing split needed in regression, just like classification
@@ -70,7 +70,6 @@ try:
 except NameError:
     pass
 
-
 reg.fit(feature_test, target_test)
 plt.plot(feature_train, reg.predict(feature_train), color="b")
 
@@ -80,5 +79,3 @@ plt.legend()
 plt.show()
 
 print(reg.coef_, reg.intercept_, reg.score(feature_test, target_test))
-
-
